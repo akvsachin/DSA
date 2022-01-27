@@ -1,0 +1,19 @@
+class Solution:
+	def fractionToDecimal(self, num, den):
+	    no=str(numerator//denominator)+'.'
+        remainder = numerator%denominator
+        if remainder==0:
+          return numerator//denominator
+        dp={}
+
+        while(remainder!=0 and remainder not in dp):
+            dp[remainder]=len(no)
+            remainder=remainder*10
+            rno = remainder//denominator
+            remainder =remainder% denominator
+            no+=str(rno)
+    
+            if remainder==0:
+                return no
+            else:
+                return(no[:dp[remainder]]+'('+no[dp[remainder]:]+')')
