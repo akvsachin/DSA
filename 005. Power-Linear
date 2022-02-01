@@ -7,7 +7,6 @@ def powerLinear(x,n):
     else :
         return (x*powerLinear(x,n-1))
 
-
 num = int(input())
 power = int(input())
 print(powerLinear(num,power))
